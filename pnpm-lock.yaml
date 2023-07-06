@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@rainbow-me/rainbowkit': ~0.12.17
+  '@rainbow-me/rainbowkit': ~1.0.4
   '@types/node': ^18.16.12
   '@types/react': ^18.2.6
   eslint: ^8.15.0
@@ -14,7 +14,7 @@ specifiers:
   wagmi: ~1.3.2
 
 dependencies:
-  '@rainbow-me/rainbowkit': 0.12.17_2lhowo656ajf36dz2ef3k2ewwy
+  '@rainbow-me/rainbowkit': 1.0.4_limx7rhcndmj2hpa7qlwphkmm4
   next: 13.4.8_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -370,14 +370,14 @@ packages:
       tslib: 2.6.0
     dev: true
 
-  /@rainbow-me/rainbowkit/0.12.17_2lhowo656ajf36dz2ef3k2ewwy:
-    resolution: {integrity: sha512-H5JT1caMTcAmjMTAYG9rDhZdNeNkfEwwYSbI/x+xfXaeQNqFeSePKHwl2jbrDiTlXWToxxT0AC2lp1b/4t0J9w==}
+  /@rainbow-me/rainbowkit/1.0.4_limx7rhcndmj2hpa7qlwphkmm4:
+    resolution: {integrity: sha512-ceW0azA1EynlM21zG/bpA7QsXx8taX3NoR78Z1RgbZwujM//6PWJQRGBA4VvHJkmuio/R2lfP51inJucs+i4gg==}
     engines: {node: '>=12.4'}
     peerDependencies:
-      ethers: '>=5.6.8'
       react: '>=17'
       react-dom: '>=17'
-      wagmi: '>=0.12.18 <1.0.0'
+      viem: ~0.3.19 || ^1.0.0
+      wagmi: ~1.0.1 || ~1.1.0 || ~1.2.0 || ~1.3.0
     dependencies:
       '@vanilla-extract/css': 1.9.1
       '@vanilla-extract/dynamic': 2.0.2
@@ -387,6 +387,7 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-remove-scroll: 2.5.4_i73ekzlbntu7jol6ph2fvy4mga
+      viem: 1.1.8_typescript@5.1.6
       wagmi: 1.3.7_hdk7j5frdoi4b7sfsdyzewgyxm
     transitivePeerDependencies:
       - '@types/react'
