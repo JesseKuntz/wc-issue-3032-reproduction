@@ -1,33 +1,33 @@
 # Reproduction for https://github.com/WalletConnect/walletconnect-monorepo/issues/3032
 
-***
+---
 
 This is a [RainbowKit](https://rainbowkit.com) + [wagmi](https://wagmi.sh) + [Next.js](https://nextjs.org/) project bootstrapped with [`create-rainbowkit`](https://github.com/rainbow-me/rainbowkit/tree/main/packages/create-rainbowkit).
 
 ## Getting Started
 
-First, run the development server:
-
-```bash
-npm run dev
+```
+cp .env.template .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Fill in `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID` with your project ID.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+pnpm i
 
-## Learn More
+pnpm dev
+```
 
-To learn more about this stack, take a look at the following resources:
+Open [http://localhost:3000](http://localhost:3000).
 
-- [RainbowKit Documentation](https://rainbowkit.com) - Learn how to customize your wallet connection flow.
-- [wagmi Documentation](https://wagmi.sh) - Learn how to interact with Ethereum.
-- [Next.js Documentation](https://nextjs.org/docs) - Learn how to build a Next.js application.
+Testing scenarios:
 
-You can check out [the RainbowKit GitHub repository](https://github.com/rainbow-me/rainbowkit) - your feedback and contributions are welcome!
+- If you want to connect on Mainnet instead of Goerli, edit the `configureChains` call in `pages/_app.tsx` to use `mainnet` instead of `goerli`.
 
-## Deploy on Vercel
+- If you want the tx to proceed through the Relay to the wallet, edit the `sendTransaction` call in `pages/index.tsx` to use `mockData70KB` instead of `mockData80KB`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Troubleshooting:
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- If you're seeing multiple TXs pop up when sending locally, disable `reactStrictMode` in `next.config.js`.
+
+- If you're using the 70KB version but not seeing the wallet respond right away, that's okay - just make sure that the WebSocket got a response to the `sendTransaction` message and be patient.

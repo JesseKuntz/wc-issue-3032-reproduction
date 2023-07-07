@@ -21,6 +21,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <p>(Goerli by default unless you change it in the code)</p>
+
         <ConnectButton />
 
         {status === "connected" && (
@@ -30,12 +32,12 @@ const Home: NextPage = () => {
               sendTransaction?.({
                 to: address,
                 value: BigInt(3200000000000000000000),
-                // data: mockData80KB,
-                data: mockData70KB,
+                data: mockData80KB,
+                // data: mockData70KB,
               })
             }
           >
-            Test Send
+            Test Send (fails by default using 80KB data)
           </button>
         )}
       </main>

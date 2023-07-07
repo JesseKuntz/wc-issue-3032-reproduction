@@ -6,6 +6,10 @@ import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { mainnet, goerli } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 
+if (!process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID) {
+  throw new Error("NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID is not set");
+}
+
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [
     // mainnet,
